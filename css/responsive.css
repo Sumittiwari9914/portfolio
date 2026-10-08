@@ -1,0 +1,251 @@
+/* ==========================================================================
+   PORTFOLIO RESPONSIVE STYLESHEET
+   Handles adjustments for Tablets, Mobile devices, and High-res screens
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOPS & SMALLER DESKTOPS (Max 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    /* Hide custom cursor on touch devices */
+    .cursor-dot, .cursor-outline {
+        display: none !important;
+    }
+    body {
+        cursor: auto !important;
+    }
+    
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    .about-grid {
+        gap: 40px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLETS & LARGE MOBILE PHONES (Max 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .section-padding {
+        padding: 80px 0;
+    }
+    
+    .section-title {
+        font-size: 2.3rem;
+    }
+    
+    /* Header & Navigation Menu Collapse */
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--bg-secondary);
+        border-left: 1px solid var(--card-border);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 100px 40px 40px 40px;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+        transition: right var(--transition-normal);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+        display: block;
+    }
+    
+    /* Mobile Menu Close Icon Transformation */
+    .mobile-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .mobile-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Hero section single column */
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        order: 2;
+        align-items: center;
+    }
+    
+    .hero-image-container {
+        order: 1;
+    }
+    
+    .hero-typing {
+        justify-content: center;
+    }
+    
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .image-wrapper-glowing {
+        width: 260px;
+        height: 260px;
+    }
+    
+    /* About Me Grid single column */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .about-text-container {
+        text-align: center;
+    }
+    
+    .about-details {
+        justify-content: center;
+    }
+    
+    /* Contact grid single column */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TIMELINE LAYOUT ADJUSTMENT FOR MOBILE (Max 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Convert Timeline to single left-aligned track */
+    .timeline-line {
+        left: 20px;
+        transform: none;
+    }
+    
+    .timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        padding: 0 0 35px 45px !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+    
+    .timeline-dot {
+        left: 12px !important;
+        right: auto !important;
+    }
+    
+    .timeline-date {
+        margin-bottom: 8px;
+    }
+    
+    /* Stats cards smaller */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Skills card padding */
+    .skills-card {
+        padding: 30px 20px;
+    }
+    
+    /* Resume card flex column */
+    .resume-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+        gap: 30px;
+    }
+    
+    .resume-icon-glowing {
+        margin: 0 auto;
+    }
+    
+    .resume-text p {
+        margin: 0 auto;
+    }
+    
+    .resume-download-btn {
+        width: 100%;
+    }
+    
+    .resume-download-btn .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. EXTRA SMALL PHONES & MOBILE VIEWS (Max 576px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-typing {
+        font-size: 1.3rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .about-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-col {
+        padding: 30px 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
